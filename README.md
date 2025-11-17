@@ -239,3 +239,249 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - OpenCV community for computer vision tools
 - All contributors and users of this project
 
+
+# 💪 Kişisel Antrenör - Yapay Zeka Destekli Spor Aktivitesi Tespit Sistemi
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green.svg)](https://opencv.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+Bilgisayarlı görü kullanarak yapay zeka destekli spor aktivitesi tespit sistemi. İnsan hareketlerini analiz eder ve poz tahmini ile spor aktivitelerini gerçek zamanlı olarak tanımlar.
+
+## 📋 İçindekiler
+
+- [Özellikler](#özellikler)
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [Proje Yapısı](#proje-yapısı)
+- [Desteklenen Aktiviteler](#desteklenen-aktiviteler)
+- [Uygulama Alanları](#uygulama-alanları)
+- [Teknik Detaylar](#teknik-detaylar)
+- [Katkıda Bulunma](#katkıda-bulunma)
+- [Lisans](#lisans)
+
+## ✨ Özellikler
+
+- **Gerçek Zamanlı Aktivite Tanıma**: Video akışlarından gerçek zamanlı spor aktivitelerini tanımlama
+- **Poz Tahmini**: Gelişmiş insan poz tespiti ve analizi
+- **Hareket Analizi**: İnsan hareketlerini doğru şekilde analiz etme ve takip etme
+- **Çoklu Aktivite Desteği**: Çeşitli spor ve fitness aktivitelerini tespit etme
+- **Video İşleme**: Aktivite analizi için önceden kaydedilmiş videoları işleme
+- **Fitness Takibi**: Egzersiz formu ve tekrar sayısını takip etme
+- **Bilgisayarlı Görü**: OpenCV ve makine öğrenmesi modelleri ile geliştirilmiş
+
+## 🚀 Kurulum
+
+### Gereksinimler
+
+- Python 3.8 veya üzeri
+- Giriş için webcam veya video dosyası
+- pip paket yöneticisi
+
+### Adım 1: Depoyu Klonlayın
+
+```bash
+git clone https://github.com/talha-eren/Personal_Trainer.git
+cd Personal_Trainer
+```
+
+### Adım 2: Bağımlılıkları Yükleyin
+
+```bash
+pip install -r requirements.txt
+```
+
+Eğer `requirements.txt` yoksa, manuel olarak yükleyin:
+
+```bash
+pip install opencv-python numpy mediapipe tensorflow
+```
+
+### Adım 3: Kurulumu Doğrulayın
+
+```bash
+python personal_trainer.py --help
+```
+
+## 💻 Kullanım
+
+### Temel Video Analizi
+
+```bash
+python personal_trainer.py --video video1.mp4
+```
+
+### Çoklu Video Analizi
+
+```bash
+python personal_trainer.py --video video1.mp4 video2.mp4
+```
+
+### Gerçek Zamanlı Webcam Analizi
+
+```bash
+python personal_trainer.py --webcam
+```
+
+### Özel Seçenekler
+
+```bash
+python personal_trainer.py \
+    --video path/to/video.mp4 \
+    --output results/ \
+    --confidence 0.5 \
+    --display
+```
+
+### Parametreler
+
+- `--video`: Analiz için video dosyası yolu(ları)
+- `--webcam`: Gerçek zamanlı tespit için webcam kullan
+- `--output`: Analiz sonuçlarını kaydetmek için dizin
+- `--confidence`: Tespit için güven eşiği (varsayılan: 0.5)
+- `--display`: Sonuçları gerçek zamanlı pencerede göster
+
+## 📁 Proje Yapısı
+
+```
+Personal_Trainer/
+│
+├── personal_trainer.py      # Ana uygulama scripti
+├── video1.mp4                # Örnek video 1
+├── video2.mp4                # Örnek video 2
+├── requirements.txt          # Python bağımlılıkları (varsa)
+├── README.md                 # Proje dokümantasyonu
+└── .gitignore               # Git ignore dosyası
+```
+
+## 🏃 Desteklenen Aktiviteler
+
+Sistem çeşitli spor aktivitelerini tespit edebilir ve analiz edebilir:
+
+- **Koşu/Yürüyüş**
+- **Yürüme**
+- **Bisiklet**
+- **Zıplama**
+- **Şınav**
+- **Squat**
+- **Mekik**
+- **Yoga Pozları**
+- **Dans**
+- **Basketbol**
+- **Futbol**
+- **Tenis**
+- Ve daha fazlası...
+
+## 🔧 Uygulama Alanları
+
+### Fitness Eğitimi
+- **Form Düzeltme**: Egzersiz formunu analiz edip geri bildirim sağlama
+- **Tekrar Sayma**: Egzersiz tekrarlarını otomatik olarak sayma
+- **Antrenman Takibi**: Antrenman seanslarını ve ilerlemeyi takip etme
+- **Kişiselleştirilmiş Koçluk**: Yapay zeka destekli koçluk önerileri
+
+### Spor Analizi
+- **Performans Analizi**: Sporcu performansını analiz etme
+- **Hareket Deseni Tanıma**: Hareket desenlerini tanımlama
+- **Yaralanma Önleme**: Potansiyel olarak zararlı hareketleri tespit etme
+- **Antrenman Optimizasyonu**: Antrenman rutinlerini optimize etme
+
+### Sağlık Hizmetleri
+- **Rehabilitasyon İzleme**: Rehabilitasyon egzersizlerini izleme
+- **Fizik Tedavi**: Fizik tedavi seanslarında yardımcı olma
+- **Aktivite İzleme**: Günlük fiziksel aktiviteleri takip etme
+
+### Araştırma ve Geliştirme
+- **Biyomekanik Araştırma**: İnsan hareket desenlerini inceleme
+- **Spor Bilimi**: Spor performansı araştırmaları
+- **Bilgisayarlı Görü**: Poz tahmini tekniklerini geliştirme
+
+## 🛠️ Teknik Detaylar
+
+### Kullanılan Teknolojiler
+
+- **OpenCV**: Bilgisayarlı görü ve görüntü işleme
+- **MediaPipe**: Poz tahmini ve insan poz tespiti
+- **TensorFlow**: Makine öğrenmesi çerçevesi
+- **NumPy**: Sayısal hesaplamalar
+
+### Poz Tahmini
+
+Sistem şunları tespit etmek için gelişmiş poz tahmini algoritmaları kullanır:
+- 33 vücut anahtar noktası (MediaPipe Pose)
+- Eklem açıları ve pozisyonları
+- Hareket yörüngeleri
+- Aktivite desenleri
+
+### Performans
+
+- **Gerçek Zamanlı İşleme**: Modern donanımda 30+ FPS
+- **Doğruluk**: Kontrollü ortamlarda yüksek doğruluk
+- **Gecikme**: Gerçek zamanlı uygulamalar için düşük gecikme
+
+## 📊 Çıktı Formatı
+
+Sistem şunları sağlar:
+- Güven skorları ile aktivite etiketleri
+- Poz anahtar noktaları görselleştirmesi
+- Hareket analizi verileri
+- Açıklamalı işlenmiş video çıktısı
+
+## 🔬 Gelişmiş Kullanım
+
+### Özel Aktivite Eğitimi
+
+Özel aktivite tanıma eğitmek için:
+
+```python
+from personal_trainer import ActivityDetector
+
+detector = ActivityDetector()
+detector.train_custom_activity(
+    video_paths=['training_videos/'],
+    activity_name='custom_exercise'
+)
+```
+
+### Toplu İşleme
+
+```python
+import os
+from personal_trainer import process_video
+
+video_dir = 'videos/'
+for video_file in os.listdir(video_dir):
+    if video_file.endswith('.mp4'):
+        process_video(os.path.join(video_dir, video_file))
+```
+
+## 🤝 Katkıda Bulunma
+
+Katkılarınızı bekliyoruz! Lütfen bir Pull Request göndermekten çekinmeyin.
+
+1. Depoyu fork edin
+2. Özellik dalınızı oluşturun (`git checkout -b feature/AmazingFeature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Harika bir özellik ekle'`)
+4. Dalınıza push yapın (`git push origin feature/AmazingFeature`)
+5. Bir Pull Request açın
+
+## 📝 Lisans
+
+Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için LICENSE dosyasına bakın.
+
+## 👤 Yazar
+
+**Talha Eren**
+
+- GitHub: [@talha-eren](https://github.com/talha-eren)
+
+## 🙏 Teşekkürler
+
+- Mükemmel poz tahmini modelleri için MediaPipe ekibine
+- Bilgisayarlı görü araçları için OpenCV topluluğuna
+- Bu projenin tüm katkıda bulunanlarına ve kullanıcılarına
+
+
+
+
+
